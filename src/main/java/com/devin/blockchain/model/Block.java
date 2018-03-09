@@ -21,7 +21,7 @@ public class Block {
     /**
      * 当前区块的交易集合
      */
-    private List<Transaction> transations;
+    private List<Transaction> transactions;
     /**
      * 工作量证明，计算正确的hash值得次数
      */
@@ -33,6 +33,16 @@ public class Block {
 
     public Block() {
         super();
+    }
+
+    public Block(int index, long timestamp, List<Transaction> transactions, int nonce, String previousHash, String hash) {
+        super();
+        this.index = index;
+        this.timestamp = timestamp;
+        this.transactions = transactions;
+        this.nonce = nonce;
+        this.previousHash = previousHash;
+        this.hash = hash;
     }
 
     public int getIndex() {
@@ -59,12 +69,12 @@ public class Block {
         this.timestamp = timestamp;
     }
 
-    public List<Transaction> getTransations() {
-        return transations;
+    public List<Transaction> getTransactions() {
+        return transactions;
     }
 
-    public void setTransations(List<Transaction> transations) {
-        this.transations = transations;
+    public void setTransactions(List<Transaction> transactions) {
+        this.transactions = transactions;
     }
 
     public int getNonce() {
